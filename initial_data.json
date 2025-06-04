@@ -1,0 +1,78 @@
+[
+{
+  "model": "users.customuser",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$MfNNEngf0cy2qSJc8CWEgy$mClGTAB8/PpHwmNmWcztAa/+wN3uzpmmQFFKzQbsd3M=",
+    "last_login": "2025-05-31T10:19:50.337Z",
+    "is_superuser": true,
+    "username": "admin@gmail.com",
+    "first_name": "",
+    "last_name": "",
+    "email": "admin@turbota.local",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-05-30T20:59:11.452Z",
+    "role": "guest",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 2,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$F3CFxYgwbYrp9NJoJWOQ2Y$PJPviITNjcXfNw3PAqYxxNfsdZSrAhYyStzZjNKPIXo=",
+    "last_login": "2025-05-31T23:01:07.173Z",
+    "is_superuser": false,
+    "username": "teacher_user",
+    "first_name": "",
+    "last_name": "",
+    "email": "teacher@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-31T09:40:00.860Z",
+    "role": "teacher",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 3,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$AsvELrjAINvlnp5wgax0Pg$mROjGEbTCH1JeOgfJsuKdk5atzYF9z0cuJ/n3kmMv7U=",
+    "last_login": "2025-06-03T19:49:01.344Z",
+    "is_superuser": false,
+    "username": "parent_user",
+    "first_name": "",
+    "last_name": "",
+    "email": "parent@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-31T09:42:51.840Z",
+    "role": "parent",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "users.customuser",
+  "pk": 4,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$efE5z1MfO5YB50TpLMe0od$MXyGbGbTnhcCsiuboS75HBvWuRgyt8OC4NESQpddBtc=",
+    "last_login": "2025-06-03T21:15:57.588Z",
+    "is_superuser": false,
+    "username": "guest_user",
+    "first_name": "",
+    "last_name": "",
+    "email": "guest@mail.com",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-31T09:43:36.653Z",
+    "role": "guest",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]

@@ -47,8 +47,19 @@
    ```
 
    Перший раз збірка образу може зайняти 1–2 хвилини.
+5. **Застосуйте міграції бази даних**
 
-5. **Відкрийте у браузері:**
+   ```
+   docker-compose exec web python manage.py migrate
+   ```
+6. **Імпортуйте початкові дані (необов'язково)**
+
+   ```
+   docker-compose exec web python manage.py loaddata initial_data.json
+   ```
+   
+
+7. **Відкрийте у браузері:**
 
    ```
    http://localhost:8000/
