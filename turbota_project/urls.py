@@ -20,14 +20,12 @@ from django.contrib.auth import views as auth_views
 from django.http import HttpResponse
 from users import views
 
-def home_view(request):
-    return HttpResponse("<h1>Вітаємо на Turbota+</h1>")
-
 urlpatterns = [
-    path('', home_view),
     path('admin/', admin.site.urls),
-    path('users/', include('users.urls')),
-    path('login/', views.custom_login_view, name='login'),
-    path('logout/', views.logout_view, name='logout'),
-
+    path('', include('core.urls')),
+    path('', include('users.urls')),
+    path('materials/', include('materials.urls')),
+    path('games/', include('games.urls')),
+    path('schedule/', include('schedule.urls')),
+    path('support/', include('support.urls')),
 ]

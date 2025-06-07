@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block title %}Головна — Turbota+{% endblock %}
+
+{% block content %}
+  <section class="text-center mb-5">
+    <img src="https://placehold.co/200x200" class="rounded-circle mb-3" alt="Turbota+ logo">
+    <h1 class="display-4">Ласкаво просимо до Turbota+</h1>
+    <p class="lead">Наша місія — підтримка, розвиток та турбота про кожного!</p>
+  </section>
+  <section class="row mb-5">
+    <div class="col-md-6">
+      <h2>Новини</h2>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Сайт відкрито для всіх користувачів!</li>
+        <li class="list-group-item">Додавайте матеріали та ігри для розвитку.</li>
+      </ul>
+    </div>
+    <div class="col-md-6">
+      <h2>Підтримка</h2>
+      <p>Долучайтеся до нашої спільноти та допомагайте іншим. <a href="{% url 'support:support_home' %}" class="btn btn-outline-primary btn-sm ms-2">Детальніше</a></p>
+    </div>
+  </section>
+  <section class="bg-light p-4 rounded mb-4">
+    <h3>Контакти</h3>
+    <ul class="list-unstyled">
+      <li><strong>Email:</strong> info@turbota.com</li>
+      <li><strong>Телефон:</strong> +380 12 345 6789</li>
+      <li><strong>Адреса:</strong> м. Київ, вул. Прикладна, 1</li>
+    </ul>
+  </section>
+{% endblock %}

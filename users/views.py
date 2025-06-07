@@ -13,15 +13,11 @@ def logout_view(request):
     return redirect('login')
 @role_required(['parent'])
 def parent_dashboard(request):
-    return render(request, 'users/parent_dashboard.html')
+    return render(request, '../templates/users/parent_dashboard.html')
 
 @role_required(['teacher'])
 def teacher_dashboard(request):
-    return render(request, 'users/teacher_dashboard.html')
-
-@role_required(['guest'])
-def guest_dashboard(request):
-    return render(request, 'users/guest_dashboard.html')
+    return render(request, '../templates/users/teacher_dashboard.html')
 
 
 def custom_login_view(request):
@@ -37,7 +33,7 @@ def custom_login_view(request):
                 login(request, guest_user)
                 return redirect('guest_dashboard')
             except CustomUser.DoesNotExist:
-                return render(request, 'users/login.html', {
+                return render(request, '../templates/users/login.html', {
                     'error': 'Гостьовий користувач не знайдений'
                 })
 
@@ -52,12 +48,12 @@ def custom_login_view(request):
             elif role == 'teacher':
                 return redirect('teacher_dashboard')
             else:
-                return render(request, 'users/login.html', {
+                return render(request, '../templates/users/login.html', {
                     'error': 'Невірний логін або роль'
             })
             print("Невдалий вхід:", username, password, role)
 
-    return render(request, 'users/login.html')
+    return render(request, '../templates/users/login.html')
 
 def register_view(request):
     if request.method == 'POST':
@@ -68,4 +64,4 @@ def register_view(request):
             return redirect('login')
     else:
         form = CustomUserCreationForm()
-    return render(request, 'users/register.html', {'form': form})
+    return render(request, '../templates/users/register.html', {'form': form})

@@ -16,6 +16,6 @@ def role_required(allowed_roles=[]):
                 return redirect('login')
             if request.user.role in allowed_roles:
                 return view_func(request, *args, **kwargs)
-            return render(request, 'users/no_access.html')
+            return render(request, '../templates/users/no_access.html')
         return wrapper
     return decorator
