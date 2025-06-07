@@ -1,16 +1,15 @@
-from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login
-from .models import CustomUser
-from .forms import CustomUserCreationForm
-from django.shortcuts import render
-from .decorators import role_required
 from django.contrib.auth import logout
-from django.contrib.auth import login
-from django.contrib.auth import get_user_model
+from django.shortcuts import render, redirect
+
+from .decorators import role_required
+from .forms import CustomUserCreationForm
+
 
 def logout_view(request):
     logout(request)
-    return redirect('login')
+    return redirect('users:login')
+
 @role_required(['parent'])
 def parent_dashboard(request):
     return render(request, '../templates/users/parent_dashboard.html')
@@ -21,39 +20,24 @@ def teacher_dashboard(request):
 
 
 def custom_login_view(request):
+    error = None
     if request.method == 'POST':
-        role = request.POST.get('role')
-
         username = request.POST.get('username')
         password = request.POST.get('password')
-
-        if role == 'guest':
-            try:
-                guest_user = CustomUser.objects.get(username='guest_user')
-                login(request, guest_user)
-                return redirect('guest_dashboard')
-            except CustomUser.DoesNotExist:
-                return render(request, '../templates/users/login.html', {
-                    'error': 'Гостьовий користувач не знайдений'
-                })
-
         user = authenticate(request, username=username, password=password)
-        print("AUTH RESULT:", user)
-
-        if user is not None and user.role == role:
-            print("Успішний вхід:", user.username, user.role)
+        if user is not None:
             login(request, user)
-            if role == 'parent':
-                return redirect('parent_dashboard')
-            elif role == 'teacher':
-                return redirect('teacher_dashboard')
+            if user.is_superuser:
+                return redirect('/admin/')
+            if user.groups.filter(name='parent').exists():
+                return redirect('users:parent_dashboard')
+            elif user.groups.filter(name='teacher').exists():
+                return redirect('users:teacher_dashboard')
             else:
-                return render(request, '../templates/users/login.html', {
-                    'error': 'Невірний логін або роль'
-            })
-            print("Невдалий вхід:", username, password, role)
-
-    return render(request, '../templates/users/login.html')
+                error = 'Ваша група не підтримується.'
+        else:
+            error = 'Неправильний логін або пароль.'
+    return render(request, '../templates/users/login.html', {'error': error})
 
 def register_view(request):
     if request.method == 'POST':
@@ -61,7 +45,7 @@ def register_view(request):
         if form.is_valid():
             user = form.save()
             login(request, user)
-            return redirect('login')
+            return redirect('users:login')
     else:
         form = CustomUserCreationForm()
     return render(request, '../templates/users/register.html', {'form': form})

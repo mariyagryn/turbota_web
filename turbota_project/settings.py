@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'games.apps.GamesConfig',
     'schedule.apps.ScheduleConfig',
     'support.apps.SupportConfig',
+    'feedback.apps.FeedbackConfig',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +68,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'users.context_processors.user_dashboard_context',
             ],
         },
     },
@@ -130,4 +132,3 @@ AUTH_USER_MODEL = 'users.CustomUser'
 AUTHENTICATION_BACKENDS = [
     'django.contrib.auth.backends.ModelBackend',
 ]
-

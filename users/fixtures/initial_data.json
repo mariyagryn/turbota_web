@@ -1,78 +1,65 @@
 [
-{
-  "model": "users.customuser",
-  "pk": 1,
-  "fields": {
-    "password": "pbkdf2_sha256$1000000$PBjnMZMcvpp8KHk5h3cB5X$mNgmsmU7fpAQcUECQbaow0QRHC6PYfl+ZHta1v/LLGo=",
-    "last_login": null,
-    "is_superuser": true,
-    "username": "admin_user",
-    "first_name": "",
-    "last_name": "",
-    "email": "admin@mail.com",
-    "is_staff": true,
-    "is_active": true,
-    "date_joined": "2025-06-05T15:29:58.949Z",
-    "role": "guest",
-    "groups": [],
-    "user_permissions": []
+  {
+    "model": "users.customuser",
+    "pk": 1,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$PBjnMZMcvpp8KHk5h3cB5X$mNgmsmU7fpAQcUECQbaow0QRHC6PYfl+ZHta1v/LLGo=",
+      "last_login": "2025-06-07T20:11:10Z",
+      "is_superuser": true,
+      "username": "admin_user",
+      "first_name": "Олег",
+      "last_name": "Владімірович",
+      "email": "admin@mail.com",
+      "is_staff": true,
+      "is_active": true,
+      "date_joined": "2025-06-05T15:29:58Z",
+      "patronymic": "Володимирович",
+      "groups": [
+        2
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 2,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$F3CFxYgwbYrp9NJoJWOQ2Y$PJPviITNjcXfNw3PAqYxxNfsdZSrAhYyYyStzZjNKPIXo=",
+      "last_login": "2025-06-07T19:39:34Z",
+      "is_superuser": false,
+      "username": "teacher_user",
+      "first_name": "Вчитель",
+      "last_name": "Вчителів",
+      "email": "teacher@mail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-05-31T09:40:00Z",
+      "patronymic": "Вчительович",
+      "groups": [
+        3
+      ],
+      "user_permissions": []
+    }
+  },
+  {
+    "model": "users.customuser",
+    "pk": 3,
+    "fields": {
+      "password": "pbkdf2_sha256$1000000$AsvELrjAINvlnp5wgax0Pg$mROjGEbTCH1JeOgfJsuKdk5atzYF9z0cuJ/n3kmMv7U=",
+      "last_login": "2025-06-07T19:39:08Z",
+      "is_superuser": false,
+      "username": "parent_user",
+      "first_name": "Батько",
+      "last_name": "Батьків",
+      "email": "parent@mail.com",
+      "is_staff": false,
+      "is_active": true,
+      "date_joined": "2025-05-31T09:42:51Z",
+      "patronymic": "Батькович",
+      "groups": [
+        1
+      ],
+      "user_permissions": []
+    }
   }
-},
-{
-  "model": "users.customuser",
-  "pk": 2,
-  "fields": {
-    "password": "pbkdf2_sha256$1000000$F3CFxYgwbYrp9NJoJWOQ2Y$PJPviITNjcXfNw3PAqYxxNfsdZSrAhYyStzZjNKPIXo=",
-    "last_login": "2025-05-31T23:01:07.173Z",
-    "is_superuser": false,
-    "username": "teacher_user",
-    "first_name": "",
-    "last_name": "",
-    "email": "teacher@mail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2025-05-31T09:40:00.860Z",
-    "role": "teacher",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "users.customuser",
-  "pk": 3,
-  "fields": {
-    "password": "pbkdf2_sha256$1000000$AsvELrjAINvlnp5wgax0Pg$mROjGEbTCH1JeOgfJsuKdk5atzYF9z0cuJ/n3kmMv7U=",
-    "last_login": "2025-06-03T19:49:01.344Z",
-    "is_superuser": false,
-    "username": "parent_user",
-    "first_name": "",
-    "last_name": "",
-    "email": "parent@mail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2025-05-31T09:42:51.840Z",
-    "role": "parent",
-    "groups": [],
-    "user_permissions": []
-  }
-},
-{
-  "model": "users.customuser",
-  "pk": 4,
-  "fields": {
-    "password": "pbkdf2_sha256$1000000$efE5z1MfO5YB50TpLMe0od$MXyGbGbTnhcCsiuboS75HBvWuRgyt8OC4NESQpddBtc=",
-    "last_login": "2025-06-03T21:15:57.588Z",
-    "is_superuser": false,
-    "username": "guest_user",
-    "first_name": "",
-    "last_name": "",
-    "email": "guest@mail.com",
-    "is_staff": false,
-    "is_active": true,
-    "date_joined": "2025-05-31T09:43:36.653Z",
-    "role": "guest",
-    "groups": [],
-    "user_permissions": []
-  }
-}
 ]

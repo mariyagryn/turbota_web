@@ -28,4 +28,5 @@ urlpatterns = [
     path('games/', include('games.urls')),
     path('schedule/', include('schedule.urls')),
     path('support/', include('support.urls')),
+    path('feedback/', include('feedback.urls')),
 ]
