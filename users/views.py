@@ -8,7 +8,7 @@ from .forms import CustomUserCreationForm
 
 def logout_view(request):
     logout(request)
-    return redirect('users:login')
+    return redirect('core:index')
 
 @role_required(['parent'])
 def parent_dashboard(request):

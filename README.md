@@ -55,7 +55,7 @@
 6. **Імпортуйте початкові дані (необов'язково)**
 
    ```
-   docker-compose exec web python manage.py loaddata initial_data
+   docker-compose exec web python manage.py loaddata initial_groups initial_users initial_news
    ```
    
 
