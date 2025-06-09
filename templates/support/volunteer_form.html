@@ -1,0 +1,72 @@
+{% extends 'base.html' %}
+{% block title %}Волонтерська форма — Turbota+{% endblock %}
+{% block content %}
+<div class="container py-4">
+    <div class="p-4 bg-white shadow rounded-4 mb-4" style="border-radius: 32px !important; max-width: 600px; margin: 0 auto;">
+        <h1 class="mb-4">Волонтерська форма</h1>
+        <p>Заповніть цю форму, якщо бажаєте долучитися до волонтерської підтримки інтернату.</p>
+        {% if messages %}
+            {% for message in messages %}
+                <div class="alert alert-success">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+        <form method="post" novalidate>
+            {% csrf_token %}
+            {% if form.non_field_errors %}
+                <div class="alert alert-danger rounded-3 mb-3">
+                    <ul class="mb-0 ps-3">
+                        {% for error in form.non_field_errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            {% endif %}
+            <div class="mb-3">
+                <label for="id_name" class="form-label">Імʼя <span class="text-danger">*</span></label>
+                {{ form.name }}
+                {% if form.name.errors %}
+                    <ul class="invalid-feedback d-block mb-0 ps-3">
+                        {% for error in form.name.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="id_phone" class="form-label">Телефон</label>
+                {{ form.phone }}
+                {% if form.phone.errors %}
+                    <ul class="invalid-feedback d-block mb-0 ps-3">
+                        {% for error in form.phone.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="id_email" class="form-label">Email</label>
+                {{ form.email }}
+                {% if form.email.errors %}
+                    <ul class="invalid-feedback d-block mb-0 ps-3">
+                        {% for error in form.email.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <div class="mb-3">
+                <label for="id_help_text" class="form-label">Як ви можете допомогти? <span class="text-danger">*</span></label>
+                {{ form.help_text }}
+                {% if form.help_text.errors %}
+                    <ul class="invalid-feedback d-block mb-0 ps-3">
+                        {% for error in form.help_text.errors %}
+                            <li>{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                {% endif %}
+            </div>
+            <button type="submit" class="btn btn-primary">Надіслати</button>
+        </form>
+    </div>
+</div>
+{% endblock %}
