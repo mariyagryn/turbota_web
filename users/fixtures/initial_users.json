@@ -24,7 +24,7 @@
     "model": "users.customuser",
     "pk": 2,
     "fields": {
-      "password": "pbkdf2_sha256$1000000$F3CFxYgwbYrp9NJoJWOQ2Y$PJPviITNjcXfNw3PAqYxxNfsdZSrAhYyYyStzZjNKPIXo=",
+      "password": "pbkdf2_sha256$1000000$AsvELrjAINvlnp5wgax0Pg$mROjGEbTCH1JeOgfJsuKdk5atzYF9z0cuJ/n3kmMv7U=",
       "last_login": "2025-06-07T19:39:34Z",
       "is_superuser": false,
       "username": "teacher_user",
