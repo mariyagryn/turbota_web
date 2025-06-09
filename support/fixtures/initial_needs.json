@@ -1,0 +1,51 @@
+[
+{
+    "model": "support.need",
+    "pk": 1,
+    "fields": {
+        "text": "Вологі та сухі серветки"
+    }
+},
+{
+    "model": "support.need",
+    "pk": 2,
+    "fields": {
+        "text": "Зошити (різних видів та розмірів)"
+    }
+},
+{
+    "model": "support.need",
+    "pk": 3,
+    "fields": {
+        "text": "Набори кольорових олівців"
+    }
+},
+{
+    "model": "support.need",
+    "pk": 4,
+    "fields": {
+        "text": "Будь-які дитячі іграшки"
+    }
+},
+{
+    "model": "support.need",
+    "pk": 5,
+    "fields": {
+        "text": "Книжки дитячої художньої літератури"
+    }
+},
+{
+    "model": "support.need",
+    "pk": 6,
+    "fields": {
+        "text": "Різні спортивні м'ячі"
+    }
+},
+{
+    "model": "support.need",
+    "pk": 7,
+    "fields": {
+        "text": "Настільні ігри"
+    }
+}
+]

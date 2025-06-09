@@ -52,10 +52,10 @@
    ```
    docker-compose exec web python manage.py migrate
    ```
-6. **Імпортуйте початкові дані (необов'язково)**
+6. **Імпортуйте початкові дані**
 
    ```
-   docker-compose exec web python manage.py loaddata initial_groups initial_users initial_news
+   docker-compose exec web python manage.py loaddata initial_groups initial_users initial_news initial_needs
    ```
    
 
