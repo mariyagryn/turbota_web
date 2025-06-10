@@ -8,8 +8,12 @@ def games_home(request):
 
 @login_required(login_url='users:login')
 def game1(request):
+    # game from
+    # https://github.com/VectorStatic/Memory-Matching-Game
     return render(request, 'games/game1.html')
 
 @login_required(login_url='users:login')
 def game2(request):
+    # game from
+    # https://github.com/msalman81/Simon-Game
     return render(request, 'games/game2.html')

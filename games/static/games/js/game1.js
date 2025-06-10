@@ -22,7 +22,7 @@ function init() {
 
 //Showing instructions
 window.onload = function() {
-    $("#ol").html(`<center><div id="inst"><h3>Вітаємо!</h3>Інструкції до гри<br/><br/><li>Знаходьте пари однакових карток, відкриваючи їх.</li><li>Щоб відкрити картку, натисніть на неї.</li><li>Якщо дві відкриті картки не співпадають, вони закриються.</li><p style="font-size:18px;">Оберіть рівень складності для початку гри.</p></div><button onclick="start(3, 4)">3 × 4</button> <button onclick="start(4, 4)">4 × 4</button><button onclick="start(4, 5)">4 × 5</button><button onclick="start(5, 6)">5 × 6</button><button onclick="start(6, 6)">6 × 6</button></center>`);
+    $("#ol").html(`<center><div id="inst"><h3>Вітаємо!</h3>Інструкції до гри<br/><br/><li>Знаходьте пари однакових карток, відкриваючи їх.</li><li>Щоб відкрити картку, натисніть на неї.</li><li>Якщо дві відкриті картки не співпадають, вони закриються.</li><p style="font-size:18px;">Оберіть рівень складності для початку гри.</p></div><button onclick="start(3, 4)">3 × 4</button> <button onclick="start(4, 4)">4 × 4</button><button onclick="start(4, 5)">4 × 5</button><button onclick="start(5, 6)">5 × 6</button><button onclick="start(6, 6)">6 × 6</button><a href="/games/" class="btn-exit-game" style="display:inline-block;margin-left:10px;margin-top:10px;padding:5px 18px;font-size:18px;border-radius:10px;border:0.1px solid #fff;background:#dc3545;color:#fff;text-decoration:none;font-weight:600;">Вийти</a></center>`);
 }
 
 //Starting the game
@@ -110,7 +110,7 @@ function change(x) {
          turn=0;
          //Increase moves
          moves++;
-         $("#moves").html("Moves: "+moves);
+         $("#moves").html("Ходи: "+moves);
       },1150);
       
     }
@@ -126,9 +126,15 @@ function change(x) {
           clearInterval(time);
           let timeStr = (min==0) ? `${sec} секунд` : `${min} хвилин(и) і ${sec} секунд`;
           setTimeout(function() {
-              $("#ol").html(`<center><div id="iol"><h2>Вітаємо!</h2><p style="font-size:23px;padding:10px;">Ви пройшли рівень ${mode} за ${moves} ходів. Це зайняло ${timeStr}.</p><p style="font-size:18px">Грати ще раз?</p><button onclick="start(3, 4)">3 × 4</button> <button onclick="start(4, 4)">4 × 4</button><button onclick="start(4, 5)">4 × 5</button><button onclick="start(5, 6)">5 × 6</button><button onclick="start(6, 6)">6 × 6</button></div></center>`);
+              $("#ol").html(`<center><div id="iol"><h2>Вітаємо!</h2><p style="font-size:23px;padding:10px;">Ви пройшли рівень ${mode} за ${moves} ходів. Це зайняло ${timeStr}.</p><p style="font-size:18px">Грати ще раз?</p><button onclick="start(3, 4)">3 × 4</button> <button onclick="start(4, 4)">4 × 4</button><button onclick="start(4, 5)">4 × 5</button><button onclick="start(5, 6)">5 × 6</button><button onclick="start(6, 6)">6 × 6</button><a href="/games/" class="btn-exit-game" style="display:inline-block;margin-left:10px;margin-top:10px;padding:5px 18px;font-size:18px;border-radius:10px;border:0.1px solid #fff;background:#dc3545;color:#fff;text-decoration:none;font-weight:600;">Вийти</a></div></center>`);
               $("#ol").fadeIn(750);
           }, 1500);
     }
   }
 }
+
+$(document).ready(function() {
+    $("#restart-btn").on("click", function() {
+        window.location.reload();
+    });
+});

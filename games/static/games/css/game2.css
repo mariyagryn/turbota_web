@@ -1,0 +1,72 @@
+body {
+  text-align: center;
+  /* Градієнтний фон */
+  background: linear-gradient(170deg, #011f3f 0%, #01418e 100%);
+  min-height: 100vh;
+}
+/* Style for the heading of level */
+#level-title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.7rem !important;
+  margin:  3%;
+  color: #FEF2BF;
+  min-height: 1.5em !important;
+  line-height: 1.5em !important;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1.5rem;
+}
+
+.container {
+  display: block;
+  width: 50%;
+  margin: auto;
+
+}
+/* style for the buttons  */
+.btn {
+  margin: 25px;
+  display: inline-block;
+  height: 200px;
+  width: 200px;
+  border: 10px solid black;
+  border-radius: 20%;
+}
+/* the styling for the game-over trigger */
+.game-over {
+  background-color: red;
+  opacity: 0.8;
+}
+
+.red {
+  background-color: red;
+}
+
+.green {
+  background-color: green;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.yellow {
+  background-color: yellow;
+}
+/* animation for when button pressed */
+.pressed {
+  box-shadow: 0 0 20px white;
+  background-color: grey;
+}
+
+.game2-title {
+  font-size: 0.7rem;
+  min-height: 1.5em;
+  line-height: 1.5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 1.5rem;
+}
+

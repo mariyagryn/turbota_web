@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="uk" dir="ltr">
+
+<head>
+    <meta charset="utf-8">
+    <title>Гра Саймона</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'games/css/game2.css' %}">
+    <link rel="icon" href="{% static 'logos/logo.svg' %}" type="image/svg+xml">
+    <!-- import font Press Start 2P -->
+    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
+    <style>
+      .exit-btn {
+        display: inline-block;
+        background: #dc3545 !important;
+        color: #fff !important;
+        font-size: 1.1rem;
+        border-radius: 12px;
+        padding: 0.6em 2.2em;
+        margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        border: none;
+        font-family: inherit;
+        font-weight: 600;
+        box-shadow: 0 2px 8px rgba(220,53,69,0.08);
+        transition: background 0.2s;
+        text-decoration: none !important;
+      }
+      .exit-btn:hover, .exit-btn:focus {
+        background: #b52a37 !important;
+        color: #fff !important;
+        text-decoration: none !important;
+      }
+    </style>
+</head>
+
+<body>
+<h1 id="level-title" class="game2-title">Натисніть будь-яку клавішу, щоб почати</h1>
+<div class="container">
+    <div class="row" style="font-size:0;">
+        <div type="button" id="green" class="btn green"></div>
+        <div type="button" id="red" class="btn red"></div>
+    </div>
+    <div class="row" style="font-size:0;">
+        <div type="button" id="yellow" class="btn yellow"></div>
+        <div type="button" id="blue" class="btn blue"></div>
+    </div>
+</div>
+<div class="text-center">
+    <a href="{% url 'games:games_home' %}" class="exit-btn">Вийти</a>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+<script src="{% static 'games/js/game2.js' %}"></script>
+
+</body>
+
+</html>

@@ -8,7 +8,9 @@
             <a href="{% url 'games:game1' %}" class="text-decoration-none game-card-link">
                 <div class="card h-100 shadow rounded-4 game-card">
                     {% load static %}
-                    <img src="{% static 'games/images/game1_preview.png' %}" class="card-img-top rounded-top-4" alt="Меморі-матч">
+                    <div class="fixed-game-img d-flex align-items-center justify-content-center rounded-top-4">
+                        <img src="{% static 'games/images/game1_preview.png' %}" class="img-fluid" alt="Меморі-матч">
+                    </div>
                     <div class="card-body text-center">
                         <h5 class="card-title">Меморі-матч</h5>
                         <p class="card-text text-muted">Знаходьте пари однакових карток, тренуйте памʼять і увагу! Грайте на різних рівнях складності.</p>
@@ -19,15 +21,39 @@
         <div class="col-12 col-md-6">
             <a href="{% url 'games:game2' %}" class="text-decoration-none game-card-link">
                 <div class="card h-100 shadow rounded-4 game-card">
-                    <img src="https://via.placeholder.com/400x200?text=Гра+2" class="card-img-top rounded-top-4" alt="Гра 2">
+                    <div class="fixed-game-img d-flex align-items-center justify-content-center rounded-top-4">
+                        <img src="{% static 'games/images/game2_preview.png' %}" class="img-fluid" alt="Саймон">
+                    </div>
                     <div class="card-body text-center">
-                        <h5 class="card-title">Гра 2</h5>
-                        <p class="card-text text-muted">Короткий опис гри 2.</p>
+                        <h5 class="card-title">Саймон</h5>
+                        <p class="card-text text-muted">Повторюйте послідовність кольорів і звуків, тренуйте памʼять та уважність! Спробуйте побити власний рекорд.</p>
                     </div>
                 </div>
             </a>
         </div>
-    </div>
+        <div class="col-12 col-md-6">
+            <div class="card h-100 shadow rounded-4 game-card">
+                <div class="fixed-game-img d-flex align-items-center justify-content-center rounded-top-4">
+                    <img src="{% static 'games/images/game_placeholder.png' %}" class="img-fluid" alt="Майбутня гра 3">
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Майбутня гра 3</h5>
+                    <p class="card-text text-muted">Скоро зʼявиться нова цікава гра!</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-12 col-md-6">
+            <div class="card h-100 shadow rounded-4 game-card">
+                <div class="fixed-game-img d-flex align-items-center justify-content-center rounded-top-4">
+                     <img src="{% static 'games/images/game_placeholder.png' %}" class="img-fluid" alt="Майбутня гра 4">
+                </div>
+                <div class="card-body text-center">
+                    <h5 class="card-title">Майбутня гра 4</h5>
+                    <p class="card-text text-muted">Скоро зʼявиться нова цікава гра!</p>
+                </div>
+            </div>
+        </div>
+        </div>
 </div>
 {% endblock %}
 {% block extra_js %}
@@ -43,4 +69,20 @@
     });
   });
 </script>
+<style>
+  .fixed-game-img {
+    height: 280px;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+  }
+  .fixed-game-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    transition: transform 0.2s;
+    z-index: 2;
+  }
+</style>
 {% endblock %}
