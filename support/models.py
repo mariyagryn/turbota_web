@@ -20,8 +20,8 @@ class Help(models.Model):
     help_text = models.TextField('Допомога')
 
     class Meta:
-        verbose_name = 'Волонтерська допомога'
-        verbose_name_plural = 'Волонтерські допомоги'
+        verbose_name = 'Форма волонтера'
+        verbose_name_plural = 'Форми волонтерів'
         ordering = ['-id']
 
     def __str__(self):

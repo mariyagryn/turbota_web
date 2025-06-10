@@ -1,8 +1,46 @@
-{% extends 'base.html' %}
-
-{% block title %}Ігри - Турбота{% endblock %}
-
+{% extends "base.html" %}
+{% block title %}Ігри — Turbota+{% endblock %}
 {% block content %}
-<h1>Розвиваючі ігри</h1>
-<p>Тут будуть розміщені розвиваючі ігри для зареєстрованих користувачів.</p>
+<div class="container py-4">
+    <h1 class="mb-4">Ігри для розвитку</h1>
+    <div class="row g-4">
+        <div class="col-12 col-md-6">
+            <a href="{% url 'games:game1' %}" class="text-decoration-none game-card-link">
+                <div class="card h-100 shadow rounded-4 game-card">
+                    {% load static %}
+                    <img src="{% static 'games/images/game1_preview.png' %}" class="card-img-top rounded-top-4" alt="Меморі-матч">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Меморі-матч</h5>
+                        <p class="card-text text-muted">Знаходьте пари однакових карток, тренуйте памʼять і увагу! Грайте на різних рівнях складності.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+        <div class="col-12 col-md-6">
+            <a href="{% url 'games:game2' %}" class="text-decoration-none game-card-link">
+                <div class="card h-100 shadow rounded-4 game-card">
+                    <img src="https://via.placeholder.com/400x200?text=Гра+2" class="card-img-top rounded-top-4" alt="Гра 2">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Гра 2</h5>
+                        <p class="card-text text-muted">Короткий опис гри 2.</p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+{% block extra_js %}
+<script>
+  // Card hover effect
+  document.querySelectorAll('.game-card-link').forEach(function(card) {
+    card.addEventListener('mouseenter', function() {
+      card.querySelector('.game-card').style.transform = 'scale(1.04)';
+      card.querySelector('.game-card').style.transition = 'transform 0.2s';
+    });
+    card.addEventListener('mouseleave', function() {
+      card.querySelector('.game-card').style.transform = 'scale(1)';
+    });
+  });
+</script>
 {% endblock %}
