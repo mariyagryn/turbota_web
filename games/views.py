@@ -17,3 +17,9 @@ def game2(request):
     # game from
     # https://github.com/msalman81/Simon-Game
     return render(request, 'games/game2.html')
+
+@login_required(login_url='users:login')
+def game3(request):
+    # game from
+    # https://github.com/kecav/math-quiz
+    return render(request, 'games/game3.html')

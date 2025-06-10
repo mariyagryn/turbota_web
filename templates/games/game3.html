@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link rel="icon" href="{% static 'logos/logo.svg' %}" type="image/svg+xml">
+    <link rel="stylesheet" href="{% static 'games/css/game3.css' %}">
+    <title>Maths Game</title>
+</head>
+
+<body>
+<div class="container">
+    <div id="start-game">
+        <h1>Ласкаво просимо до гри з математики.</h1>
+        <p>Натисніть кнопку нижче, щоб почати гру</p>
+        <a id="start-btn" onclick="restart()" class="game3-main-btn">ПОЧАТИ ГРУ</a>
+        <a id="exit-btn" href="{% url 'games:games_home' %}" class="game3-main-btn game3-exit-btn">ВИЙТИ</a>
+    </div>
+    <div id="in-game">
+        <div class="top-section">
+            <h1>Математична гра</h1>
+            <div class="game-data">
+                <p>Питання :
+                    <span id="Qno">0</span>/10
+                </p>
+                <p>Рахунок: <span id="score">0</span></p>
+            </div>
+            <div id="timer">
+                <div id="progress"></div>
+            </div>
+        </div>
+        <div class="question-card">
+            <h1 id="question">Тут буде питання</h1>
+        </div>
+        <h3>Оберіть правильну відповідь: </h3>
+        <div class="answer-card">
+            <button>Варіант А</button>
+            <button>Варіант Б</button>
+            <button>Варіант В</button>
+            <button>Варіант Г</button>
+        </div>
+        <div class="game3-restart-wrap">
+            <a id="restart-in-game" class="game3-main-btn" onclick="window.location.reload()">Перезапустити</a>
+        </div>
+    </div>
+    <div id="end-game">
+        <h1>&#128515</h1>
+        <h1>Ваш підсумковий рахунок: <span id="final-score">0</span> / 1000</h1>
+        <p id="message"></p>
+        <div id="cat-image-wrap" style="display:none; text-align:center; margin-top:1.5rem;"></div>
+        <a id="restart-btn" onclick="restart()" class="game3-main-btn">ГРАТИ ЩЕ РАЗ</a>
+    </div>
+</div>
+<script src="{% static 'games/js/game3.js' %}"></script>
+<style>
+.game3-main-btn {
+    cursor: pointer;
+    border-radius: 1rem;
+    margin: 1rem auto 0.5rem;
+    padding: 1rem 3rem;
+    font-size: 2rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: rgb(64, 107, 226);
+    display: block;
+    text-align: center;
+    text-decoration: none;
+    transition: background 0.2s;
+}
+.game3-main-btn:hover {
+    background-color: #3a5edb;
+}
+.game3-exit-btn {
+    background-color: #fb3640;
+    margin-top: 0.5rem;
+}
+.game3-exit-btn:hover {
+    background-color: #c82333;
+}
+.game3-restart-wrap {
+    text-align: center;
+    margin-top: 1.5rem;
+}
+</style>
+</body>
+
+</html>
