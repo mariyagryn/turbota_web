@@ -23,3 +23,10 @@ def game3(request):
     # game from
     # https://github.com/kecav/math-quiz
     return render(request, 'games/game3.html')
+
+@login_required(login_url='users:login')
+def game4(request):
+    # game from
+    #
+    return render(request, 'games/game4.html')
+
