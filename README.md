@@ -66,3 +66,65 @@
    ```
 
    Ви побачите головну сторінку додатку.
+
+---
+
+## Швидкий старт без Docker (через venv)
+
+### Передумови
+- Встановлений Python 3.10+ (рекомендовано 3.11 або новіше)
+- pip (зазвичай йде разом із Python)
+- git (для клонування репозиторію)
+
+### Покрокова інструкція
+
+1. **Клонувати репозиторій:**
+   ```
+   git clone https://github.com/mariyagryn/turbota_web.git
+   cd turbota_web
+   ```
+
+2. **Створити та активувати віртуальне середовище:**
+   - Windows:
+     ```
+     python -m venv .venv
+     .venv\Scripts\activate
+     ```
+   - Linux/macOS:
+     ```
+     python3 -m venv .venv
+     source .venv/bin/activate
+     ```
+
+3. **Встановити залежності:**
+   ```
+   pip install -r requirements.txt
+   ```
+
+4. **Скопіювати .env.example у .env:**
+   ```
+   cp .env.example .env
+   ```
+   (або вручну створити .env на основі .env.example)
+
+5. **Застосувати міграції:**
+   ```
+   python manage.py migrate
+   ```
+
+6. **Імпортувати початкові дані:**
+   ```
+   python manage.py loaddata initial_groups initial_users initial_news initial_needs
+   ```
+
+7. **Запустити сервер розробки:**
+   ```
+   python manage.py runserver
+   ```
+
+8. **Відкрити у браузері:**
+   ```
+   http://localhost:8000/
+   ```
+
+---
