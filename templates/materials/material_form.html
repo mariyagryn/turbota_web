@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block title %}{% if form.instance.pk %}Редагування матеріалу{% else %}Додавання матеріалу{% endif %} — Turbota+{% endblock %}
+
+{% block content %}
+<section class="d-flex flex-column align-items-center justify-content-center" style="min-height: 60vh;">
+    <div class="bg-white p-5 rounded-5 shadow text-center" style="max-width: 480px;">
+        <h1 class="mb-4">{% if form.instance.pk %}Редагування матеріалу{% else %}Додавання матеріалу{% endif %}</h1>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{ form.as_p }}
+            <div class="d-flex gap-2 justify-content-center mt-4">
+                <button type="submit" class="btn btn-primary rounded-4">Зберегти</button>
+                <a href="{% url 'materials:materials_home' %}" class="btn btn-outline-secondary rounded-4">Скасувати</a>
+            </div>
+        </form>
+    </div>
+</section>
+{% endblock %}
+
