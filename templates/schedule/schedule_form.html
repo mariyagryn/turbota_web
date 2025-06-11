@@ -1,10 +1,10 @@
 {% extends "base.html" %}
-{% block title %}{% if form.instance.pk %}Редагування матеріалу{% else %}Додавання матеріалу{% endif %} — Turbota+{% endblock %}
+{% block title %}Редагування розкладу — Turbota+{% endblock %}
 
 {% block content %}
 <section class="d-flex flex-column align-items-center justify-content-center" style="min-height: 60vh;">
   <style>
-    .card-material-form {
+    .card-schedule-form {
       background-color: white;
       border-radius: 20px;
       padding: 40px 50px;
@@ -14,7 +14,7 @@
       width: 100%;
       box-sizing: border-box;
     }
-    .card-material-form h1 {
+    .card-schedule-form h1 {
       text-align: center;
       margin-bottom: 30px;
       color: #000;
@@ -60,7 +60,7 @@
       margin-top: 4px;
       margin-bottom: 8px;
     }
-    .card-material-form input, .card-material-form select {
+    .card-schedule-form input, .card-schedule-form select {
       width: 100%;
       padding: 12px;
       border: 1px solid #ccc;
@@ -69,12 +69,12 @@
       font-size: 15px;
       box-sizing: border-box;
     }
-    .card-material-form .helptext, .card-material-form .errorlist {
+    .card-schedule-form .helptext, .card-schedule-form .errorlist {
       font-size: 0.85em;
       color: #777;
       margin-bottom: 10px;
     }
-    .card-material-form button {
+    .card-schedule-form button {
       background: #1a73e8;
       color: white;
       border: none;
@@ -87,10 +87,10 @@
       cursor: pointer;
       transition: 0.3s ease;
     }
-    .card-material-form button:hover {
+    .card-schedule-form button:hover {
       background: #0c52c4;
     }
-    .card-material-form .btn-cancel {
+    .card-schedule-form .btn-cancel {
       background: #f8f9fa;
       color: #333;
       border: 1px solid #ccc;
@@ -101,12 +101,12 @@
       margin-right: auto;
       text-align: center;
     }
-    .card-material-form .btn-cancel:hover {
+    .card-schedule-form .btn-cancel:hover {
       background: #e0e0e0;
     }
   </style>
-  <div class="card-material-form">
-    <h1>{% if form.instance.pk %}Редагування матеріалу{% else %}Додавання матеріалу{% endif %}</h1>
+  <div class="card-schedule-form">
+    <h1>Редагування розкладу</h1>
     <form method="post" enctype="multipart/form-data">
       {% csrf_token %}
       {% for field in form %}
@@ -115,7 +115,7 @@
             <label class="custom-file-label">{{ field.label }}</label>
             <button type="button" class="custom-file-btn" onclick="document.getElementById('customFileInput').click()">Оберіть файл</button>
             <span class="file-name-preview" id="fileNamePreview">
-              {% if form.instance.pk and form.instance.file %}{{ form.instance.file.name|cut:'materials/' }}{% endif %}
+              {% if form.instance.pk and form.instance.file %}{{ form.instance.file.name|cut:'schedule/' }}{% endif %}
             </span>
             <input type="file" name="{{ field.name }}" id="customFileInput" class="custom-file-input" onchange="updateFileNamePreview()">
           {% else %}
@@ -127,7 +127,7 @@
         </div>
       {% endfor %}
       <button type="submit">Зберегти</button>
-      <a href="{% url 'materials:materials_home' %}" class="btn btn-cancel">Скасувати</a>
+      <a href="{% url 'schedule:schedule_home' %}" class="btn btn-cancel">Скасувати</a>
     </form>
   </div>
   <script>
