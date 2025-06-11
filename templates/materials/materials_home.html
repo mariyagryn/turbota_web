@@ -1,8 +1,41 @@
-{% extends 'base.html' %}
-
-{% block title %}Матеріали - Турбота{% endblock %}
+{% extends "base.html" %}
+{% block title %}Освітні матеріали — Turbota+{% endblock %}
 
 {% block content %}
-<h1>Навчальні матеріали</h1>
-<p>Тут будуть розміщені навчальні матеріали для зареєстрованих користувачів.</p>
+<section class="mb-4">
+    <h1 class="display-5 mb-4">Освітні матеріали</h1>
+    <form method="get" class="mb-4">
+        <div class="row g-2 align-items-center">
+            <div class="col-auto">
+                <label for="category" class="form-label mb-0">Категорія:</label>
+            </div>
+            <div class="col-auto">
+                <select name="category" id="category" class="form-select rounded-4" onchange="this.form.submit()">
+                    <option value="">Усі категорії</option>
+                    {% for category in categories %}
+                        <option value="{{ category.id }}" {% if selected_category == category.id %}selected{% endif %}>{{ category.name }}</option>
+                    {% endfor %}
+                </select>
+            </div>
+        </div>
+    </form>
+    <div class="row g-4">
+        {% for material in materials %}
+            <div class="col-md-6 col-lg-4">
+                <div class="card h-100 shadow rounded-5">
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <h5 class="card-title">{{ material.title }}</h5>
+                        <p class="card-text text-muted mb-2">Категорія: {{ material.category.name }}</p>
+                        <a href="{{ material.file.url }}" class="btn btn-outline-primary rounded-4 mt-auto" target="_blank">Відкрити PDF</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <div class="col-12">
+                <div class="alert alert-info rounded-4 text-center">Матеріалів не знайдено.</div>
+            </div>
+        {% endfor %}
+    </div>
+</section>
 {% endblock %}
+
