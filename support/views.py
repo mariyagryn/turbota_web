@@ -17,3 +17,4 @@ def volunteer_form(request):
     else:
         form = VolunteerForm()
     return render(request, 'support/volunteer_form.html', {'form': form})
+

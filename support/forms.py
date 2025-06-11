@@ -25,3 +25,4 @@ class VolunteerForm(forms.ModelForm):
         if not phone and not email:
             self.add_error(None, 'Вкажіть хоча б телефон або email для звʼязку.')
         return cleaned_data
+
