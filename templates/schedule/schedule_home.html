@@ -10,7 +10,7 @@
         <div class="mb-3 d-flex align-items-center justify-content-between">
             <h2 class="h5 mb-0">{{ schedule_file.title }}</h2>
             {% if can_edit %}
-                <a href="{% url 'schedule:schedule_edit' schedule_file.pk %}" class="btn btn-outline-warning rounded-4">Редагувати файл</a>
+                <a href="{% url 'schedule:schedule_edit' schedule_file.pk %}" class="btn btn-outline-primary rounded-4">Редагувати файл</a>
             {% endif %}
         </div>
         <div class="ratio ratio-4x3 rounded-4 shadow mb-4" style="min-height: 400px;">
